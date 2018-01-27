@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { login } from '../ducks/reducer.js'
+import { login } from './Ducks/reducer.js'
 import { connect } from 'react-redux'
 import axios from 'axios'
 import Auth0 from './Auth0'
@@ -21,7 +21,7 @@ class Home extends Component {
     render() {
         return (
             <div className="controller home-controller">
-                {this.props.user}
+                {this.props.user ? <Home /> : <Auth0 />}
             </div>
         )
     }
